@@ -1,2 +1,5 @@
-# exercism_python
-http://exercism.io/languages/python/exercises
+## exercism - python ##
+
+### Licença ###
+
+Arquivos desenvolvidos por mim estão licenciado sob UNLICENSE, conforme arquivo LICENSE no repositório.
