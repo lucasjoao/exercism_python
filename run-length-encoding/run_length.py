@@ -14,20 +14,13 @@ def encode(chars):
 
 def decode(chars):
     decoded = ''
-    backup = ''
-    for curr, nextt in zip(chars, chars[1:]):
-        if curr.isdecimal() and nextt.isalpha():
-            decoded += int(curr) * nextt
-        elif curr.isalpha() and nextt.isalpha():
-            decoded += int(backup) * curr + nextt if backup.isdecimal() else curr + nextt
-        elif curr.isdecimal() and nextt.isdecimal():
-            tmp = curr
-            curr = tmp + nextt
-        else: # alpha and decimal
-            decoded += int(backup) * curr if backup.isdecimal() else curr
-            curr = nextt
-
-        backup = curr
+    number = ''
+    for c in chars:
+        if c.isdigit():
+            number += c
+        else:
+            decoded += int(number) * c if number != '' else c
+            number = ''
 
     return decoded
 
